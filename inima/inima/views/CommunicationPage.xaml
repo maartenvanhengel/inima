@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inima.views.CommunicationPage"
+             Title="{Binding Title}">
+    <StackLayout>
+        <Grid VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="8*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+
+            <ScrollView Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="FillAndExpand">
+            
+                <!--IsVisible="{Binding TextVisuable}"-->
+
+               <!--<Frame BackgroundColor="Black" HorizontalOptions="FillAndExpand" Margin="80,0,10,0">
+                    <Label Text="{Binding PlayerText}" TextColor="White" FontSize="Medium"></Label>
+                </Frame>
+                <Frame BackgroundColor="Red" HorizontalOptions="FillAndExpand" Margin="10,0,80,0">
+                    <Label Text="{Binding ComputerText}" TextColor="White" FontSize="Medium"></Label>
+                </Frame>-->
+                <ScrollView>
+                <CollectionView ItemsSource="{Binding Items}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Frame BackgroundColor="{Binding .Color}" Margin="{Binding .Margin}">
+
+                                <Label Text="{Binding .Text}" TextColor="White"></Label>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                </ScrollView>
+            
+            </ScrollView>
+
+            <StackLayout Margin="10,0,10,0" BackgroundColor="#FF4d4d" Grid.Row="2" Orientation="Horizontal" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+                <Entry x:Name="entry" Margin="5,0,0,0" BackgroundColor="White" TextColor="Black" Text="{Binding EntryText}" FontSize="Medium" VerticalOptions="Center" HorizontalOptions="FillAndExpand" ></Entry>
+                    <ImageButton Clicked="ImageButton_Clicked" Source="send.png" HorizontalOptions="End" Command="{Binding SendMessageCommand}"></ImageButton>
+             </StackLayout>
+
+        </Grid>
+    </StackLayout>
+</ContentPage>

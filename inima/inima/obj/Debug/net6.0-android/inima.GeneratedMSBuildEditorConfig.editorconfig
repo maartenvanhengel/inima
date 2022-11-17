@@ -1,0 +1,64 @@
+is_global = true
+build_property.TargetFramework = net6.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = inima
+build_property.ProjectDir = D:\software\inima\inima\
+
+[D:/software/inima/inima/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/software/inima/inima/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/software/inima/inima/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/software/inima/inima/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[D:/software/inima/inima/views/AvatarPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.views.AvatarPage.xaml
+build_metadata.AdditionalFiles.TargetPath = views\AvatarPage.xaml
+build_metadata.AdditionalFiles.RelativePath = views\AvatarPage.xaml
+
+[D:/software/inima/inima/views/CommunicationPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.views.CommunicationPage.xaml
+build_metadata.AdditionalFiles.TargetPath = views\CommunicationPage.xaml
+build_metadata.AdditionalFiles.RelativePath = views\CommunicationPage.xaml
+
+[D:/software/inima/inima/views/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.views.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = views\MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = views\MainPage.xaml
+
+[D:/software/inima/inima/views/MedicinesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.views.MedicinesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = views\MedicinesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = views\MedicinesPage.xaml
+
+[D:/software/inima/inima/views/SettingsPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = inima.views.SettingsPage.xaml
+build_metadata.AdditionalFiles.TargetPath = views\SettingsPage.xaml
+build_metadata.AdditionalFiles.RelativePath = views\SettingsPage.xaml

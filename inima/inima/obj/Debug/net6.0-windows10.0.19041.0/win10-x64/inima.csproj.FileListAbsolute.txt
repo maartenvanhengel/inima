@@ -1,0 +1,12 @@
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\inima.csproj.AssemblyReference.cache
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\mauifont.inputs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\mauisplash.inputs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\mauimanifest.stamp
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.i.cs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.cs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\XamlTypeInfo.g.cs
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xaml
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\XamlSaveStateFile.xml
+D:\software\inima\inima\obj\Debug\net6.0-windows10.0.19041.0\win10-x64\inima.GeneratedMSBuildEditorConfig.editorconfig

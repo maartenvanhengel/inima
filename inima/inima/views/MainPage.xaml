@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inima.MainPage"
+             xmlns:viewmodel="clr-namespace:inima.models"
+             x:DataType="viewmodel:MainPageViewModel"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="mainBtnStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FF4d4d"></Setter>
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="Margin" Value="2"></Setter>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="VerticalOptions" Value="FillAndExpand"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+                <Setter Property="FontSize" Value="Body"></Setter>
+            </Style>
+            <Style x:Key="sideMenuBtnStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="HorizontalOptions" Value="Start"></Setter>
+                <Setter Property="FontSize" Value="Large"></Setter>
+                <Setter Property="Margin" Value="-10,0,0,0"></Setter>
+            </Style>
+            <Style x:Key="imgBtnMenuStyle" TargetType="ImageButton">
+                <Setter Property="HorizontalOptions" Value="Center"></Setter>
+                <Setter Property="IsVisible" Value="{Binding MenuVisuable}"></Setter>
+            </Style>
+            <Style x:Key="PrgStyle" TargetType="ProgressBar">
+                <Setter Property="VerticalOptions" Value="Start"></Setter>
+                <Setter Property="ProgressColor" Value="Black"></Setter>
+                <Setter Property="Margin" Value="8,0,8,0"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <StackLayout>
+        <Grid VerticalOptions="FillAndExpand" BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="55"></RowDefinition>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <!--navbar-->
+            <StackLayout Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" HorizontalOptions="FillAndExpand" BackgroundColor="Red">
+                <ImageButton Source="{Binding HamburgerImage}" Command="{Binding HamburgerKlikCommand}"></ImageButton>
+                <Label Text="{Binding Name}" VerticalOptions="Center" Margin="10,0,0,0" FontSize="Large"></Label>
+            </StackLayout>
+            <StackLayout Grid.Row="0" Grid.ColumnSpan="3" BackgroundColor="Red" Orientation="Horizontal" HorizontalOptions="EndAndExpand" IsVisible="{Binding StreakVisuable}">
+                <Label FontSize="22" TextColor="White" Text="{Binding StreakValue}" VerticalOptions="Center"></Label>
+                <Image Source="flame.png"></Image>
+            </StackLayout>
+
+            <!--status-->
+            <Label Text="{Binding Status}" Grid.Row="1" Grid.Column="0" TextColor="Black"></Label>
+            
+            <!-- button for menu-->
+            <Button Command="{Binding AddFoodCommand}" Grid.Row="2" Grid.Column="0" Style="{StaticResource mainBtnStyle}" IsVisible="{Binding MenuVisuable}"></Button>
+            <Button Command="{Binding AddDrinkCommand}" Grid.Row="2" Grid.Column="1" Style="{StaticResource mainBtnStyle}" IsVisible="{Binding MenuVisuable}"></Button>
+            <Button  Command="{Binding AddSportCommand}"  Grid.Row="2" Grid.Column="2" Style="{StaticResource mainBtnStyle}" IsVisible="{Binding MenuVisuable}"></Button>
+            <ImageButton Command="{Binding AddFoodCommand}"  Source="food.png"  Grid.Row="2" Grid.Column="0" Style="{StaticResource imgBtnMenuStyle}"></ImageButton>
+            <ImageButton Command="{Binding AddDrinkCommand}" Source="drink.png" Grid.Row="2" Grid.Column="1" Style="{StaticResource imgBtnMenuStyle}"></ImageButton>
+            <ImageButton Command="{Binding AddSportCommand}" Source="sport.png" Grid.Row="2" Grid.Column="2" Style="{StaticResource imgBtnMenuStyle}"></ImageButton>
+
+            <ProgressBar Grid.Row="2" Grid.Column="0" Progress="{Binding ProgressFoodValue}"  IsVisible="{Binding MenuVisuable}" Style="{StaticResource PrgStyle}"/>
+            <ProgressBar Grid.Row="2" Grid.Column="1" Progress="{Binding ProgressDrinkValue}" IsVisible="{Binding MenuVisuable}" Style="{StaticResource PrgStyle}"/>
+            <ProgressBar Grid.Row="2" Grid.Column="2" Progress="{Binding ProgressSportValue}" IsVisible="{Binding MenuVisuable}" Style="{StaticResource PrgStyle}"/>
+
+            <!-- FOOD -->
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding FoodOptionsVisuable}" Grid.Row="2" Grid.ColumnSpan="3" >
+                <Button Style="{StaticResource mainBtnStyle}" Text="&lt;" Command="{Binding GoBackCommand}" HorizontalOptions="Start"></Button>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectFood1Command}" Text="{Binding Food1Name}"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectFood2Command}" Text="{Binding Food2Name}"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectFood3Command}" Text="{Binding Food3Name}"></Button>
+                </StackLayout>
+                </StackLayout>
+            
+            <!-- DRINKS-->
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding DrinkOptionsVisuable}" Grid.Row="2" Grid.ColumnSpan="3">
+                <Button Style="{StaticResource mainBtnStyle}" Text="&lt;" Command="{Binding GoBackCommand}" HorizontalOptions="Start"></Button>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectDrink1Command}" Text="{Binding Drink1Name}"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectDrink2Command}" Text="water"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectDrink3Command}" Text="kofie"></Button>                    
+                </StackLayout>
+                </StackLayout>
+
+            <!--Sport -->
+            <StackLayout Orientation="Horizontal" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" IsVisible="{Binding SportOptionsVisuable}" Grid.Row="2" Grid.ColumnSpan="3">
+                <Button Style="{StaticResource mainBtnStyle}" Text="&lt;" Command="{Binding GoBackCommand}" HorizontalOptions="Start"></Button>
+                <StackLayout HorizontalOptions="FillAndExpand">
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectSport1Command}" Text="{Binding Sport1Name}"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectSport2Command}" Text="{Binding Sport2Name}"></Button>
+                    <Button Style="{StaticResource mainBtnStyle}" Command="{Binding SelectSport3Command}" Text="{Binding Sport3Name}"></Button>
+                </StackLayout>
+            </StackLayout>
+
+            <!-- side screen-->       
+            <StackLayout Grid.Row="1" Grid.RowSpan="3" Grid.ColumnSpan="3" HorizontalOptions="Start" BackgroundColor="Red" IsVisible="{Binding LeftMenuVisuable}">
+
+                <Grid HorizontalOptions="Start">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                        <RowDefinition Height="12*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="3*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <ImageButton Grid.Row="0" Grid.Column="0" Source="avatar.png" Margin="3,0,0,0"></ImageButton>
+                    <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource sideMenuBtnStyle}" Text="avatar" Command="{Binding GoToAvatarCommand}"></Button>
+
+                    <ImageButton Grid.Row="1" Grid.Column="0" Source="medicine.png" Margin="3,0,0,0"></ImageButton>
+                    <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource sideMenuBtnStyle}" Text="medicines" Command="{Binding GoToMedicinesCommand}"></Button>
+
+                    <ImageButton Grid.Row="2" Grid.Column="0" Source="avatar.png" Margin="3,0,0,0"></ImageButton>
+                    <Button Grid.Row="2" Grid.Column="1" Style="{StaticResource sideMenuBtnStyle}" Text="settings" Command="{Binding GoToSettingsCommand}"></Button>
+
+                    <Button Grid.Row="3" Grid.Column="1" Style="{StaticResource sideMenuBtnStyle}" Text="communicatie" Command="{Binding GoToCommunicationCommand}"></Button>
+                </Grid>
+            </StackLayout> 
+
+            <!--medicines -->
+            <ImageButton Source="medicine.png" Command="{Binding TakeMedicinesCommand}" IsVisible="{Binding TakeMedicinesVisuable}" Grid.Row="1" Grid.Column="2" HorizontalOptions="Start" VerticalOptions="Start" Margin="35" ></ImageButton>
+
+
+<!--            <Button Text="klik" Command="{Binding GoToCommunicationCommand}" BackgroundColor="Blue"></Button>-->
+        </Grid> 
+    </StackLayout>
+
+</ContentPage>

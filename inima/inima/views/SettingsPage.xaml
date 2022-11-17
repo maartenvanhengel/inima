@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="inima.views.SettingsPage"
+             Title="SettingsPage"
+             BackgroundColor="White">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="labelStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"></Setter>
+                <Setter Property="FontSize" Value="Body"></Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <VerticalStackLayout Margin="10,0,10,0">
+        <Label Text="max salt" Style="{StaticResource labelStyle}"></Label>
+        <Entry Keyboard="Numeric" Text="{Binding MaxSaltValue}" BackgroundColor="#cfd1d7" ></Entry>
+        <Label Text="time between drink" Style="{StaticResource labelStyle}"></Label>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+            <Entry Keyboard="Numeric" Text="{Binding BetweenDrinkTime}" HorizontalOptions="FillAndExpand" BackgroundColor="#cfd1d7"></Entry>
+            <Label Text="minuten" HorizontalOptions="End" VerticalOptions="Center" Style="{StaticResource labelStyle}"></Label>
+        </StackLayout>
+        <Label Text="time between food" Style="{StaticResource labelStyle}"></Label>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" >
+            <Entry Keyboard="Numeric" HorizontalOptions="FillAndExpand" Text="{Binding BetweenFoodTime}" BackgroundColor="#cfd1d7"></Entry>
+            <Label Text="minuten" HorizontalOptions="End" VerticalOptions="Center" Style="{StaticResource labelStyle}"></Label>
+        </StackLayout>
+        <Button Text="apply" Command="{Binding AplySettingsCommand}"></Button>
+    </VerticalStackLayout>
+</ContentPage>
